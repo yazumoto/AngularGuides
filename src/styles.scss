@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 135px;
+  border-radius: 4px;
+  background-color: #2196F3;
+  color: #FFFFFF;
+  font-size: 14px;
+  line-height: 21px;
+  cursor: pointer;
+
+  &.black {
+    background-color: #212121;
+  }
+
+  &.white {
+    color: #212121;
+    background-color: white;
+    border: 1px solid #212121;
+  }
+}
