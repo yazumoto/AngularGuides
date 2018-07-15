@@ -1,27 +1,34 @@
-# Sono01
+# Angular Guides 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+このレポジトリは、 「世界一わかりやすいSPA Angular の 世界一わかりやすい入門」のコードを置いているレポジトリです。
 
-## Development server
+# 起動方法
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Setup
 
-## Code scaffolding
+```
+yarn install
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+これで必要な node のパッケージがインストールされます。
 
-## Build
+## 起動
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```
+yarn start
+```
 
-## Running unit tests
+上記コマンドで起動したら、
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+http://localhost:4200
 
-## Running end-to-end tests
+にアクセスしてください。
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+# 各種バージョン
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+Angular CLI: 6.0.8
+Node: 8.10.0
+OS: darwin x64
+Angular: 6.0.7
+```
