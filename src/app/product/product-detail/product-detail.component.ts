@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../../shared/models/product';
 
 @Component({
   selector: 'app-product-detail',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailComponent implements OnInit {
 
-  constructor() { }
+  product: Product;
+
+  constructor() {
+    setTimeout(() => {
+      this.product = new Product('010', 'Candy', 100);
+    }, 1000);
+  }
 
   ngOnInit() {
   }

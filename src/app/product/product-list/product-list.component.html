@@ -1,6 +1,20 @@
-<p>
-  product-list works!
-</p>
 <div class="button" [routerLink]="['/products', id]">
   商品詳細へ
 </div>
+<h1>Product List</h1>
+<div *ngIf="products; else elseBlock">
+  Productsが登録されました
+  <table>
+    <tr>
+      <td>id</td>
+      <td>name</td>
+      <td>price</td>
+    </tr>
+    <tr *ngFor="let product of products">
+      <td>{{product.id}}</td>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+    </tr>
+  </table>
+</div>
+<ng-template #elseBlock>Productsはまだ登録されていません</ng-template>

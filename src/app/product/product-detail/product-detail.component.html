@@ -1,6 +1,13 @@
-<p>
-  product-detail works!
-</p>
 <div class="button" routerLink="/products">
   商品一覧へ
 </div>
+<h1>Product Detail</h1>
+<div *ngIf="product; else elseBlock">
+  Product({{product.id}})が登録されました
+  <ul>
+    <li>id: {{product.id}}</li>
+    <li>name: {{product.name}}</li>
+    <li>price: {{product.price}}</li>
+  </ul>
+</div>
+<ng-template #elseBlock>Productはまだ登録されていません</ng-template>
