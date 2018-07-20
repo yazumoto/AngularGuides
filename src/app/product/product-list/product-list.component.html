@@ -1,8 +1,32 @@
 <div class="container">
   <div class="title">商品一覧</div>
   <div class="product-list-container">
-    <div class="waiting-for-products">
+    <div class="waiting-for-products" *ngIf="products === null; else productList">
       商品を取得しています...
     </div>
+    <ng-template #productList>
+      <div class="product-list-table">
+        <div class="product-line header">
+          <div class="product-id">ID</div>
+          <div class="product-name">名前</div>
+          <div class="product-price">価格</div>
+        </div>
+        <div class="product-line">
+          <div class="product-id">{{ products[0].id }} </div>
+          <div class="product-name">{{ products[0].name }}</div>
+          <div class="product-price">{{ products[0].price }}</div>
+        </div>
+        <div class="product-line">
+          <div class="product-id">{{ products[1].id }} </div>
+          <div class="product-name">{{ products[1].name }}</div>
+          <div class="product-price">{{ products[1].price }}</div>
+        </div>
+        <div class="product-line">
+          <div class="product-id">{{ products[2].id }} </div>
+          <div class="product-name">{{ products[2].name }}</div>
+          <div class="product-price">{{ products[2].price }}</div>
+        </div>
+      </div>
+    </ng-template>
   </div>
 </div>
