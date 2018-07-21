@@ -1,6 +1,22 @@
-<p>
-  product-list works!
-</p>
-<div class="button" [routerLink]="['/products', id]">
-  商品詳細へ
+<div class="container">
+  <div class="title">商品一覧</div>
+  <div class="product-list-container">
+    <div class="waiting-for-products" *ngIf="products === null; else productList">
+      商品を取得しています...
+    </div>
+    <ng-template #productList>
+      <div class="product-list-table">
+        <div class="product-line header">
+          <div class="product-id">ID</div>
+          <div class="product-name">名前</div>
+          <div class="product-price">価格</div>
+        </div>
+        <div class="product-line" *ngFor="let product of products">
+          <div class="product-id">{{ product.id }} </div>
+          <div class="product-name">{{ product.name }}</div>
+          <div class="product-price">{{ product.price }}</div>
+        </div>
+      </div>
+    </ng-template>
+  </div>
 </div>

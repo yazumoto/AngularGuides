@@ -1,0 +1,40 @@
+.container {
+  margin: auto;
+  padding: 32px 0;
+  width: 800px;
+  .title {
+    padding: 8px 0;
+    text-align: center;
+    width: 100%;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .product-list-container {
+    .product-list-table {
+      border: 1px solid #D9DBDE;
+      border-radius: 4px;
+      overflow: hidden;
+
+      .product-line {
+        display: flex;
+        padding: 16px 24px;
+
+        &.header {
+          background-color: #F5F5F5;
+        }
+
+        &:nth-child(n+2) {
+          border-top: 1px solid #D9DBDE;
+        }
+
+        .product-id {
+          width: 40px;
+        }
+        .product-name {
+          width: 630px;
+        }
+      }
+    }
+  }
+}

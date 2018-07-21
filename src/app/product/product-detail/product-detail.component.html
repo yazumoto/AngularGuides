@@ -1,6 +1,24 @@
-<p>
-  product-detail works!
-</p>
-<div class="button" routerLink="/products">
-  商品一覧へ
+<div class="container">
+  <div class="title">商品詳細</div>
+  <div class="product-detail-container">
+    <div class="param-line">
+      <div class="label">ID</div>
+      <div class="value">{{ product.id }}</div>
+    </div>
+    <div class="param-line">
+      <div class="label">名前</div>
+      <div class="value">{{ product.name }}</div>
+    </div>
+    <div class="param-line">
+      <div class="label">価格</div>
+      <div class="value">{{ product.price }}</div>
+    </div>
+    <div class="param-line">
+      <div class="label">説明</div>
+      <div class="value">{{ product.description }}</div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="button black" routerLink="/products">商品一覧へ</div>
+  </div>
 </div>
