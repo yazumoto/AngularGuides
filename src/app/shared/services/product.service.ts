@@ -18,4 +18,8 @@ export class ProductService {
   list(): Observable<Product[]> {
     return of(this.products);
   }
+
+  get(id: number): Observable<Product> {
+    return of(this.products[id - 1]);
+  }
 }
