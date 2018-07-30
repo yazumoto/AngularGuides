@@ -1,0 +1,47 @@
+.container {
+  margin: auto;
+  padding: 32px 0;
+  width: 800px;
+  .title {
+    padding: 8px 0;
+    text-align: center;
+    width: 100%;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .edit-form {
+    padding: 16px 48px;
+    border: 1px solid #D9DBDE;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+
+    .edit-line {
+      display: flex;
+      align-items: center;
+      padding: 16px 0;
+      width: 100%;
+
+      label {
+        width: 15%;
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      input {
+        border: 1px solid #BDBDBD;
+        border-radius: 4px;
+        padding: 0 8px;
+        width: 560px;
+        height: 40px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+  }
+}
