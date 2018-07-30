@@ -3,19 +3,19 @@
   <form class="edit-form">
     <div class="edit-line">
       <label>ID</label>
-      <span>1</span>
+      <span>{{ product.id }}</span>
     </div>
     <div class="edit-line">
       <label>名前</label>
-      <input type="text">
+      <input type="text" name="name" [(ngModel)]="product.name">
     </div>
     <div class="edit-line">
       <label>価格</label>
-      <input type="number">
+      <input type="number" name="price" [(ngModel)]="product.price">
     </div>
     <div class="edit-line">
       <label>説明</label>
-      <input type="text">
+      <input type="text" name="description" [(ngModel)]="product.description">
     </div>
   </form>
   <div class="footer">
