@@ -18,7 +18,9 @@
 
       .product-line {
         display: flex;
+        align-items: center;
         padding: 16px 24px;
+        height: 34px;
 
         &.header {
           background-color: #F5F5F5;
@@ -27,12 +29,18 @@
         &:nth-child(n+2) {
           border-top: 1px solid #D9DBDE;
         }
+        &:hover {
+          background-color: #F5F5F5;
+        }
 
         .product-id {
           width: 40px;
         }
         .product-name {
           width: 630px;
+        }
+        .button {
+          width: 80px;
         }
       }
     }
