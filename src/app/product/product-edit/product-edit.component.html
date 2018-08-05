@@ -1,26 +1,26 @@
 <div class="container">
   <div class="title">商品編集</div>
-  <form (ngSubmit)="saveProduct()">
+  <form (ngSubmit)="saveProduct()" [formGroup]="productForm">
     <div class="edit-form">
       <div class="edit-line">
         <label>ID</label>
-        <span>{{ product.id }}</span>
+        <span>{{ productForm.controls.id.value }}</span>
       </div>
       <div class="edit-line">
         <label>名前</label>
-        <input type="text" name="name" [(ngModel)]="product.name">
+        <input type="text" formControlName="name" required>
       </div>
       <div class="edit-line">
         <label>価格</label>
-        <input type="number" name="price" [(ngModel)]="product.price">
+        <input type="number" formControlName="price">
       </div>
       <div class="edit-line">
         <label>説明</label>
-        <input type="text" name="description" [(ngModel)]="product.description">
+        <input type="text" formControlName="description">
       </div>
     </div>
     <div class="footer">
-      <span class="button white" [routerLink]="['/products', product.id]">キャンセル</span>
+      <span class="button white" [routerLink]="['/products', productForm.controls.id.value]">キャンセル</span>
       <button class="button black">保存</button>
     </div>
   </form>
