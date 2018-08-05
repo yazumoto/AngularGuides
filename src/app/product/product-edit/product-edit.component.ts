@@ -38,6 +38,8 @@ export class ProductEditComponent implements OnInit {
   }
 
   saveProduct(): void {
-    this.router.navigate(['/products']);
+    const { id, name, price, description } = this.productForm.getRawValue();
+    this.productService.update(new Product(id, name, price, description));
+    this.router.navigate(['/products', this.productForm.controls.id.value]);
   }
 }

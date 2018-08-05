@@ -22,4 +22,9 @@ export class ProductService {
   get(id: number): Observable<Product> {
     return of(this.products[id - 1]);
   }
+
+  update(product: Product): void {
+    const index = this.products.findIndex((prd: Product) => prd.id === product.id);
+    this.products[index] = product;
+  }
 }
