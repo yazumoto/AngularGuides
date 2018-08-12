@@ -8,7 +8,12 @@
       </div>
       <div class="edit-line">
         <label>名前</label>
-        <input type="text" formControlName="name" required>
+        <div>
+          <input id="name" type="text" formControlName="name" required>
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+            <div *ngIf="name.errors.required">入力してください</div>
+          </div>
+        </div>
       </div>
       <div class="edit-line">
         <label>価格</label>
