@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../../shared/models/product';
 import { ProductService } from '../../shared/services/product.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-product-edit',
@@ -13,7 +13,7 @@ export class ProductEditComponent implements OnInit {
   productForm = this.fb.group({
     id: [''],
     name: [''],
-    price: [''],
+    price: ['', Validators.min(100)],
     description: [''],
   });
 
@@ -25,6 +25,7 @@ export class ProductEditComponent implements OnInit {
   ) {}
 
   get name() { return this.productForm.get('name'); }
+  get price() { return this.productForm.get('price'); }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
