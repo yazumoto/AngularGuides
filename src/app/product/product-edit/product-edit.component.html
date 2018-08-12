@@ -33,7 +33,7 @@
     </div>
     <div class="footer">
       <span class="button white" [routerLink]="['/products', productForm.controls.id.value]">キャンセル</span>
-      <button class="button black">保存</button>
+      <button class="button black" [class.disabled]="productForm.invalid">保存</button>
     </div>
   </form>
 </div>

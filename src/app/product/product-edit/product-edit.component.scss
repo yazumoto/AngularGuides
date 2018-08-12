@@ -51,6 +51,11 @@
 
     .button {
       margin: 0 20px;
+
+      &.disabled {
+        background-color: #B0BEC5;
+        pointer-events: none;
+      }
     }
   }
 }
