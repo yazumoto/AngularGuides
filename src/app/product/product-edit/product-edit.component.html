@@ -13,6 +13,7 @@
           <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
             <div *ngIf="name.errors.required">入力してください</div>
             <div *ngIf="name.errors.maxlength">50文字以内で入力してください</div>
+            <div *ngIf="name.errors.forbiddenWord">ガッ</div>
           </div>
         </div>
       </div>

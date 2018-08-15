@@ -3,6 +3,7 @@ import { Product } from '../../shared/models/product';
 import { ProductService } from '../../shared/services/product.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
+import { forbiddenWordValidator } from '../../shared/validators/forbidden-word';
 
 @Component({
   selector: 'app-product-edit',
@@ -12,7 +13,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class ProductEditComponent implements OnInit {
   productForm = this.fb.group({
     id: [''],
-    name: [''],
+    name: ['', forbiddenWordValidator('ぬるぽ')],
     price: ['', Validators.min(100)],
     description: [''],
   });
