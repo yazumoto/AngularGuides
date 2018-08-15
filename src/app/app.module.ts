@@ -7,13 +7,15 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 import { AppRoutingModule } from './app-routing.module';
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ForbiddenWordValidatorDirective } from './shared/validators/forbidden-word';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
     ProductDetailComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    ForbiddenWordValidatorDirective,
   ],
   imports: [
     BrowserModule,

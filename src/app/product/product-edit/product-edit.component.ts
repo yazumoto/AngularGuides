@@ -13,7 +13,7 @@ import { forbiddenWordValidator } from '../../shared/validators/forbidden-word';
 export class ProductEditComponent implements OnInit {
   productForm = this.fb.group({
     id: [''],
-    name: ['', forbiddenWordValidator('ぬるぽ')],
+    name: [''],
     price: ['', Validators.min(100)],
     description: [''],
   });

@@ -9,7 +9,7 @@
       <div class="edit-line">
         <label>名前</label>
         <div>
-          <input id="name" type="text" formControlName="name" required maxlength="50">
+          <input id="name" type="text" formControlName="name" required maxlength="50" appForbiddenWord="ぬるぽ">
           <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
             <div *ngIf="name.errors.required">入力してください</div>
             <div *ngIf="name.errors.maxlength">50文字以内で入力してください</div>
