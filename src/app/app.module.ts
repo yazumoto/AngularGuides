@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForbiddenWordValidatorDirective } from './shared/validators/forbidden-word';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ForbiddenWordValidatorDirective } from './shared/validators/forbidden-w
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
