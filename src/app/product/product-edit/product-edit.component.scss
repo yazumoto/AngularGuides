@@ -36,6 +36,11 @@
         height: 40px;
         font-size: 14px;
       }
+
+      .alert {
+        margin-top: 8px;
+        color: red;
+      }
     }
   }
 
@@ -43,5 +48,14 @@
     display: flex;
     justify-content: center;
     padding: 24px 0;
+
+    .button {
+      margin: 0 20px;
+
+      &.disabled {
+        background-color: #B0BEC5;
+        pointer-events: none;
+      }
+    }
   }
 }

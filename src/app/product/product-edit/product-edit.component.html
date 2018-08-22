@@ -1,26 +1,40 @@
 <div class="container">
   <div class="title">商品編集</div>
-  <form (ngSubmit)="saveProduct()">
+  <form (ngSubmit)="saveProduct()" [formGroup]="productForm">
     <div class="edit-form">
       <div class="edit-line">
         <label>ID</label>
-        <span>{{ product.id }}</span>
+        <span>{{ productForm.controls.id.value }}</span>
       </div>
       <div class="edit-line">
         <label>名前</label>
-        <input type="text" name="name" [(ngModel)]="product.name">
+        <div>
+          <input id="name" type="text" formControlName="name" required maxlength="50" appForbiddenWord="ぬるぽ">
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+            <div *ngIf="name.errors.required">入力してください</div>
+            <div *ngIf="name.errors.maxlength">50文字以内で入力してください</div>
+            <div *ngIf="name.errors.forbiddenWord">ガッ</div>
+          </div>
+        </div>
       </div>
       <div class="edit-line">
         <label>価格</label>
-        <input type="number" name="price" [(ngModel)]="product.price">
+        <div>
+          <input type="number" formControlName="price" required>
+          <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert">
+            <div *ngIf="price.errors.required">入力してください</div>
+            <div *ngIf="price.errors.min">100円以上を入力してください</div>
+          </div>
+        </div>
       </div>
       <div class="edit-line">
         <label>説明</label>
-        <input type="text" name="description" [(ngModel)]="product.description">
+        <input type="text" formControlName="description">
       </div>
     </div>
     <div class="footer">
-      <button class="button black">保存</button>
+      <span class="button white" [routerLink]="['/products', productForm.controls.id.value]">キャンセル</span>
+      <button class="button black" [class.disabled]="productForm.invalid">保存</button>
     </div>
   </form>
 </div>

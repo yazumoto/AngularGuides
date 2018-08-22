@@ -2,6 +2,7 @@
   margin: auto;
   padding: 32px 0;
   width: 800px;
+
   .title {
     padding: 8px 0;
     text-align: center;
@@ -32,7 +33,11 @@
 
   .footer {
     display: flex;
-    justify-content: ce;
+    justify-content: center;
     margin-top: 20px;
+
+    .button {
+      margin: 0 20px;
+    }
   }
 }
