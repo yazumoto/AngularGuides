@@ -7,10 +7,9 @@ import UserCredential = firebase.auth.UserCredential;
 })
 export class FirebaseService {
   EMAIL = 'test@example.com';
-  PASSWORD = 'password'
+  PASSWORD = 'password';
 
   constructor() {
-    console.log('FireBaseService');
     const config = {
       apiKey: 'AIzaSyAIvHZtzbQH_nXUJ1boxbxL14IOPuRHo9c',
       authDomain: 'angular-guide-firebase.firebaseapp.com',
@@ -20,12 +19,16 @@ export class FirebaseService {
       messagingSenderId: '582123911754',
     };
     firebase.initializeApp(config);
-    this.createUser(this.EMAIL, this.PASSWORD);
+    this.signInOrCreateUser(this.EMAIL, this.PASSWORD);
   }
 
-  createUser(email, password): void {
-    firebase.auth().createUserWithEmailAndPassword(email, password).then((userCredential: UserCredential) => {
+  signInOrCreateUser(email, password): void {
+    firebase.auth().signInWithEmailAndPassword(email, password).then((userCredential: UserCredential) => {
       console.log(userCredential.user.uid);
+    }).catch(() => {
+      firebase.auth().createUserWithEmailAndPassword(email, password).then((userCredential: UserCredential) => {
+        console.log(userCredential.user.uid);
+      });
     });
   }
 }
