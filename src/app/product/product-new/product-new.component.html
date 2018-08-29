@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="title">商品作成</div>
+  <form (ngSubmit)="saveProduct()" [formGroup]="productForm">
+    <div class="edit-form">
+      <div class="edit-line">
+        <label>名前</label>
+        <div>
+          <input id="name" type="text" formControlName="name" required maxlength="50" appForbiddenWord="ぬるぽ">
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+            <div *ngIf="name.errors.required">入力してください</div>
+            <div *ngIf="name.errors.maxlength">50文字以内で入力してください</div>
+            <div *ngIf="name.errors.forbiddenWord">ガッ</div>
+          </div>
+        </div>
+      </div>
+      <div class="edit-line">
+        <label>価格</label>
+        <div>
+          <input type="number" formControlName="price" required>
+          <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert">
+            <div *ngIf="price.errors.required">入力してください</div>
+            <div *ngIf="price.errors.min">100円以上を入力してください</div>
+          </div>
+        </div>
+      </div>
+      <div class="edit-line">
+        <label>説明</label>
+        <input type="text" formControlName="description">
+      </div>
+    </div>
+    <div class="footer">
+      <span class="button white" routerLink="/products">キャンセル</span>
+      <button class="button black" [class.disabled]="productForm.invalid">作成</button>
+    </div>
+  </form>
+</div>
