@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ProductService } from '../../shared/services/product.service';
+import { Product } from '../../shared/models/product';
 
 @Component({
   selector: 'app-product-newj',
@@ -27,5 +28,10 @@ export class ProductNewComponent implements OnInit {
 
   ngOnInit() {}
 
-  saveProduct(): void {}
+  saveProduct(): void {
+    if (this.productForm.valid) {
+      const { name, price, description } = this.productForm.getRawValue();
+      this.productService.create(new Product(null, name, price, description)).subscribe(() => {});
+    }
+  }
 }

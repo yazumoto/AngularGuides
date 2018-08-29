@@ -48,4 +48,10 @@ export class ProductService {
     const index = this.products.findIndex((prd: Product) => prd.key === product.key);
     this.products[index] = product;
   }
+
+  create(product: Product): Observable<void> {
+    return this.http.post(`${this.BASE_URL}/users/${this.UID}/products.json`, product, { params: { auth: this.TOKEN } }).pipe(
+      map((response: any) => product.key = response.name),
+    );
+  }
 }
