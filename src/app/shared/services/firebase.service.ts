@@ -24,6 +24,7 @@ export class FirebaseService {
 
   signInOrCreateUser(email, password): void {
     firebase.auth().signInWithEmailAndPassword(email, password).then((userCredential: UserCredential) => {
+      console.log(userCredential.user.uid);
       firebase.auth().currentUser.getIdToken().then((token: string) => {
         console.log(token);
       });
