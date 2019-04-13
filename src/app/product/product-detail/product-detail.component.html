@@ -1,9 +1,9 @@
-<div class="container">
+<div *ngIf="product" class="container">
   <div class="title">商品詳細</div>
   <div class="product-detail-container">
     <div class="param-line">
-      <div class="label">ID</div>
-      <div class="value">{{ product.id }}</div>
+      <div class="label">KEY</div>
+      <div class="value">{{ product.key }}</div>
     </div>
     <div class="param-line">
       <div class="label">名前</div>
