@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ProductService } from '../../shared/services/product.service';
 import { Product } from '../../shared/models/product';
@@ -31,7 +31,9 @@ export class ProductNewComponent implements OnInit {
   saveProduct(): void {
     if (this.productForm.valid) {
       const { name, price, description } = this.productForm.getRawValue();
-      this.productService.create(new Product(null, name, price, description)).subscribe(() => {});
+      this.productService.create(new Product(null, name, price, description)).subscribe(() => {
+        this.router.navigate(['/products']);
+      });
     }
   }
 }
