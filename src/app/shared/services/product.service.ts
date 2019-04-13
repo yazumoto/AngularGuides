@@ -40,8 +40,12 @@ export class ProductService {
     );
   }
 
-  get(id: number): Observable<Product> {
-    return of(this.products[id - 1]);
+  get(key: string): Observable<Product> {
+    return this.http.get(`${this.BASE_URL}/users/${this.UID}/products/${key}.json`, { params: { auth: this.TOKEN } }).pipe(
+      map((response: any) => {
+        return new Product(key, response.name, response.price, response.description);
+      })
+    );
   }
 
   update(product: Product): void {
