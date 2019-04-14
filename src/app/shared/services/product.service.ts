@@ -48,9 +48,14 @@ export class ProductService {
     );
   }
 
-  update(product: Product): void {
-    const index = this.products.findIndex((prd: Product) => prd.key === product.key);
-    this.products[index] = product;
+  update(product: Product): Observable<void> {
+    return this.http.patch(`${this.BASE_URL}/users/${this.UID}/products/${product.key}.json`, {
+      name: product.name,
+      price: product.price,
+      description: product.description
+    }, { params: { auth: this.TOKEN } }).pipe(
+      map(() => {})
+    );
   }
 
   create(product: Product): Observable<void> {
