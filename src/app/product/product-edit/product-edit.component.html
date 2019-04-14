@@ -35,6 +35,7 @@
     <div class="footer">
       <span class="button white" [routerLink]="['/products', productForm.controls.key.value]">キャンセル</span>
       <button class="button black" [class.disabled]="productForm.invalid">保存</button>
+      <span class="button red" (click)="deleteProduct()">削除</span>
     </div>
   </form>
 </div>

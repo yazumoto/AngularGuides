@@ -58,6 +58,12 @@ export class ProductService {
     );
   }
 
+  delete(key: string): Observable<void> {
+    return this.http.delete(`${this.BASE_URL}/users/${this.UID}/products/${key}.json`, { params: { auth: this.TOKEN }}).pipe(
+      map(() => {})
+    );
+  }
+
   create(product: Product): Observable<void> {
     return this.http.post(`${this.BASE_URL}/users/${this.UID}/products.json`, product, { params: { auth: this.TOKEN } }).pipe(
       map((response: any) => product.key = response.name),

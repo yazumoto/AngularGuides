@@ -49,4 +49,12 @@ export class ProductEditComponent implements OnInit {
       });
     }
   }
+
+  deleteProduct(): void {
+    if (window.confirm('本当に削除しますか？')) {
+      this.productService.delete(this.productForm.controls.key.value).subscribe(() => {
+        this.router.navigate(['/products']);
+      });
+    }
+  }
 }
