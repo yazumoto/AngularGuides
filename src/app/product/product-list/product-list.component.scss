@@ -1,7 +1,7 @@
 .container {
   margin: auto;
   padding: 32px 0;
-  width: 800px;
+  width: 900px;
   .title {
     padding: 8px 0;
     text-align: center;
@@ -24,6 +24,10 @@
 
         &.header {
           background-color: #F5F5F5;
+
+          .product-id {
+            font-size: 18px;
+          }
         }
 
         &:nth-child(n+2) {
@@ -34,15 +38,22 @@
         }
 
         .product-id {
-          width: 40px;
+          width: 220px;
+          font-size: 12px;
         }
         .product-name {
-          width: 630px;
+          width: 540px;
         }
         .button {
           width: 80px;
         }
       }
     }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 12px;
   }
 }

@@ -12,7 +12,7 @@ import { forbiddenWordValidator } from '../../shared/validators/forbidden-word';
 })
 export class ProductEditComponent implements OnInit {
   productForm = this.fb.group({
-    id: [''],
+    key: [''],
     name: [''],
     price: ['', Validators.min(100)],
     description: [''],
@@ -32,7 +32,7 @@ export class ProductEditComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       this.productService.get(params['id']).subscribe((product: Product) => {
         this.productForm.setValue({
-          id: product.id,
+          key: product.key,
           name: product.name,
           price: product.price,
           description: product.description,
@@ -43,9 +43,18 @@ export class ProductEditComponent implements OnInit {
 
   saveProduct(): void {
     if (this.productForm.valid) {
-      const { id, name, price, description } = this.productForm.getRawValue();
-      this.productService.update(new Product(id, name, price, description));
-      this.router.navigate(['/products', this.productForm.controls.id.value]);
+      const { key, name, price, description } = this.productForm.getRawValue();
+      this.productService.update(new Product(key, name, price, description)).subscribe(() => {
+        this.router.navigate(['/products', this.productForm.controls.key.value]);
+      });
+    }
+  }
+
+  deleteProduct(): void {
+    if (window.confirm('本当に削除しますか？')) {
+      this.productService.delete(this.productForm.controls.key.value).subscribe(() => {
+        this.router.navigate(['/products']);
+      });
     }
   }
 }

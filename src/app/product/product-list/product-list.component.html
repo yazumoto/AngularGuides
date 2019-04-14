@@ -7,18 +7,21 @@
     <ng-template #productList>
       <div class="product-list-table">
         <div class="product-line header">
-          <div class="product-id">ID</div>
+          <div class="product-id">KEY</div>
           <div class="product-name">名前</div>
           <div class="product-price">価格</div>
         </div>
         <div class="product-line" *ngFor="let product of products" (mouseenter)="hovered(product)" (mouseleave)="unhovered(product)">
-          <div class="product-id">{{ product.id }} </div>
+          <div class="product-id">{{ product.key }} </div>
           <div class="product-name">{{ product.name }}</div>
           <div class="product-price">
             <span *ngIf="!product.hovered; else Unhovered">{{ product.price }}</span>
-            <ng-template #Unhovered><span class="button white" [routerLink]="[product.id]">詳細</span></ng-template>
+            <ng-template #Unhovered><span class="button white" [routerLink]="[product.key]">詳細</span></ng-template>
           </div>
         </div>
+      </div>
+      <div class="footer">
+        <button class="button black" routerLink="/products/new">商品を追加する</button>
       </div>
     </ng-template>
   </div>
