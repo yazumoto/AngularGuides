@@ -2,6 +2,8 @@
 
 このレポジトリは、 「世界一わかりやすいSPA Angular の 世界一わかりやすい入門」のコードを置いているレポジトリです。
 
+https://qiita.com/seteen/items/43908e33e08a39612a07
+
 # 起動方法
 
 ## Setup
